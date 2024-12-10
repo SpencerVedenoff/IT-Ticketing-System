@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IT Support Ticketing System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<!-- Header Section with Logo -->
+<div style="display: flex; align-items: center; gap: 15px;">
+    <img src="{{ url_for('static', filename='Logo.jpg') }}" alt="Company Logo" style="width: 80px; height: 80px; border-radius: 10px;">
+    <h1>IT Support Ticketing System</h1>
+</div>
+
+<!-- Create Ticket Button -->
+<a href="/new_ticket" class="button">Create New Ticket</a>
+
+<!-- Filter by Status -->
+<form method="GET" action="/">
+    <label for="status-filter">Filter by Status:</label>
+    <select id="status-filter" name="status" onchange="this.form.submit()">
+        <option value="All" {% if current_filter == 'All' or current_filter is none %}selected{% endif %}>All</option>
+        <option value="Open" {% if current_filter == 'Open' %}selected{% endif %}>Open</option>
+        <option value="In Progress" {% if current_filter == 'In Progress' %}selected{% endif %}>In Progress</option>
+        <option value="Closed" {% if current_filter == 'Closed' %}selected{% endif %}>Closed</option>
+    </select>
+</form>
+
+<h2>All Tickets</h2>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Created At</th>
+        <th>Sender Info</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for ticket in tickets %}
+    <tr>
+        <td>{{ ticket.title }}</td>
+        <td>{{ ticket.description }}</td>
+        <td>{{ ticket.status }}</td>
+        <td>{{ ticket.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        <td>{{ ticket.sender_name }} ({{ ticket.sender_email }})</td> <!-- New Column -->
+        <td><a href="/view_ticket/{{ ticket.id }}">View</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% if not tickets %}
+    <p>No tickets available.</p>
+{% endif %}
+
+</body>
+</html>

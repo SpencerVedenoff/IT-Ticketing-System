@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Ticket</title>
+</head>
+<body>
+
+<h1>Create a New Support Ticket</h1>
+
+<form action="/new_ticket" method="POST">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" required><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+    <button type="submit">Create Ticket</button>
+</form>
+
+<a href="/">Back to Ticket List</a>
+
+</body>
+</html>

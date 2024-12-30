@@ -1,0 +1,46 @@
+table {
+    width: 100%; /* Spread table across the page */
+    border-collapse: collapse; /* Remove extra spacing between borders */
+    margin-top: 20px; /* Add space above the table */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Add borders */
+    padding: 15px; /* Add padding for spacing */
+    text-align: left; /* Align content to the left */
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+    font-weight: bold; /* Make headers bold */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray for even rows */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Clean font style */
+    margin: 20px; /* Add spacing around the page */
+}
+
+form {
+    margin-bottom: 20px; /* Add space below the dropdown form */
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Blue links */
+}
+
+a:hover {
+    text-decoration: underline;
+}

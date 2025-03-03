@@ -1,0 +1,4 @@
+- Open source version of a basic IT Ticketing Sytem I coded using python, flask, SQLite and IMAP parsing.
+- Currently this App will authenticate with credentials configured in the .env and parse for unread messages, save subject line as ticket title, and body text as description
+- In production I had this setup to utilize API connection to Gmail for better and more accurate parsing, for security reasons I have reverted those settings for this public repo
+- I plan to build upon this Open Source repo and include a user guide for an API configuration once I time to build this out
